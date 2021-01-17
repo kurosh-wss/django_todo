@@ -1,0 +1,10 @@
+from django.db.models import fields
+from rest_framework import serializers
+
+from .models import Todo
+
+
+class TodoSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Todo
+        fields = ('id', 'title', 'description', 'created', 'due_date')
